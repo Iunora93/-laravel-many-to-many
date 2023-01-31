@@ -9,7 +9,13 @@ class Project extends Model
 {
     use HasFactory;
     protected $guarded = ['slug'];
-    public function types(){
+    
+    public function types()
+    {
         return $this->belongsTo(Types::class);
+    }
+    public function technologies()
+    {
+        return $this->belongsToMany(Technology::class);
     }
 }
