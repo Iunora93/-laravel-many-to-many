@@ -6,7 +6,6 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Types;
 use Illuminate\Support\Facades\Schema;
-use Mockery\Matcher\Type;
 use Illuminate\Support\Str;
 
 

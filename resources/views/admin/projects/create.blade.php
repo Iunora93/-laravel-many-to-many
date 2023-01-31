@@ -38,8 +38,21 @@
                 <label for="cover_image" class="form-label">Aggiungi una immagine</label>
                 <input type="file" class="form-control" id="cover_image" name="cover_image">
             </div>
+            
+            <div class="mb-3">
+                <div class="mb-2"><h3>Tecnologie</h3></div>
+                @foreach ($technologies as $technology)
+                    <input type="checkbox" class="form-check-label" name="technologies[]" id="{{$technology->slug}} {{ in_array( $technology->id, old('technologies', [])) ? 'checked' : '' }}" value="{{$technology->id}}">
+                    <label for="{{$technology->slug}}" class="form-check-label me-3">{{$technology->name}}</label>
+                @endforeach
+                @error('technologies[]')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div>
             <button type="submit" class="btn btn-primary">Crea</button>
         </form>
+        
+    
     </div>
   </div>
 </div>
